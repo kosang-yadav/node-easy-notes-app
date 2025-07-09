@@ -18,9 +18,7 @@ mongoose.Promise = global.Promise;
 
 // Connecting to the database
 mongoose
-  .connect(MONGODB_URL, {
-    useNewUrlParser: true,
-  })
+  .connect(MONGODB_URL)
   .then(() => {
     console.log("Successfully connected to the database");
   })

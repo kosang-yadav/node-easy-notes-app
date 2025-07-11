@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // Configuring the database
 const mongoose = require("mongoose");
 
-const MONGODB_URL = "mongodb+srv://temp:1234@user.vx3pm.mongodb.net/notes";
+const MONGODB_URL = "mongodb+srv://<db_user>:<db_password>4@user.vx3pm.mongodb.net/notes";
 mongoose.Promise = global.Promise;
 
 // Connecting to the database

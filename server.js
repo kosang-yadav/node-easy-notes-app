@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const config = require("dotenv").config();
 
 // create express app
 const app = express();
@@ -13,12 +14,11 @@ app.use(bodyParser.json());
 // Configuring the database
 const mongoose = require("mongoose");
 
-const MONGODB_URL = "mongodb+srv://temp:1234@user.vx3pm.mongodb.net/notes";
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
 mongoose
-  .connect(MONGODB_URL)
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Successfully connected to the database");
   })
